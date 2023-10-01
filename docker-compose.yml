@@ -11,8 +11,6 @@ services:
 
   streamlit:
     build: streamlit/
-    depends_on:
-      - fastapi
     expose: 
         - "8501"
     networks:
