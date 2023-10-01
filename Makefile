@@ -1,11 +1,11 @@
 #File used only during development
 
-docker_compose = docker-compose -f docker_compose.yml
+docker_compose = docker compose -f docker-compose.yml
 docker_web = docker exec -it streamlit
 
 .PHONY: up
 up: # Builds, (re)creates, starts, and attaches to containers for a service. Deletes all previously created contianer images
-	@$(docker_compose) up -d --build; docker images -q |xargs docker rmi;
+	@$(docker_compose) up -d --build; docker images -q |xargs docker rmi --force;
 
 .PHONY: logs
 logs: # View the logs of streamlit activity
